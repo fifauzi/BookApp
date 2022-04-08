@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   Text,
   StyleSheet,
@@ -11,6 +12,7 @@ import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import axios from 'axios';
 import {BASE_URL} from '../../helpers/apiAccessToken';
+import RegistrationSuccess from '../../screens/registrationSuccess/index';
 import NoInternetConnection from '../../component/NoInternetConnection';
 import {useDispatch, useSelector} from 'react-redux';
 import {SetUsername, SetPassword, SetEmail} from './redux/action';
@@ -35,7 +37,7 @@ const Index = ({navigation}) => {
         Alert.alert('Alert', 'Registration Success', [
           {
             text: 'OK',
-            onPress: () => navigation.navigate('Login'),
+            onPress: () => navigation.navigate('RegistrationSuccess'),
           },
         ]);
       } else if (!checkEmail(email) && isValidPassword(password)) {
