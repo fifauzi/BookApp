@@ -1,4 +1,3 @@
-/* eslint-disable curly */
 /* eslint-disable no-unused-vars */
 import {
   StyleSheet,
@@ -35,9 +34,12 @@ const Index = ({navigation}) => {
       const getToken = () => {
         dispatch(SetToken(res.data.tokens.access.token));
       };
-      if (res.status === 201 || res.status === 200) getToken();
+      if (res.status === 201 || res.status === 200) {
+        getToken();
+      }
       navigation.navigate('Home');
     } catch (error) {
+      Alert.alert('Error', 'Login Failed! Please try again :)', [{text: 'OK'}]);
       console.log(error);
     } finally {
       SetLoading(false);
