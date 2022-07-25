@@ -40,7 +40,7 @@ const Index = () => {
         component={RegistrationSuccess}
       />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="SignUp" component={Register} />
       <Stack.Screen name="BookDetail" component={BookDetail} />
     </Stack.Navigator>
   );
